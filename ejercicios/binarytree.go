@@ -66,3 +66,56 @@ func (t *BinaryTree) Height() int {
 		return -1
 	}
 }
+func (t *BinaryTree) SumarNodos() int {
+
+	if t.root != nil {
+		return t.root.SumarNodos()
+	}
+	return 0
+}
+
+func (t *BinaryTree) SumarNodos2() int {
+
+	if t.root != nil {
+		return t.root.SumarNodos2()
+	}
+	return 0
+}
+func (t *BinaryTree) SumarHojas() int {
+
+	if t.root == nil {
+		return 0
+	}
+
+	return t.root.SumarHojasByNode()
+}
+
+func (t *BinaryTree) SumarHojasPares() int {
+
+	if t.root == nil {
+		return 0
+	}
+
+	return t.root.SumaValoresPares()
+}
+
+func (t *BinaryTree) SumarNodosMayoresA6() int {
+	if t.root == nil {
+		return 0
+	}
+	return t.root.SumarNodosMayoresA6ByNode()
+}
+
+func (t *BinaryTree) MayorAltura() int {
+	if t.root == nil {
+		return -1
+	}
+	return t.root.MayorAlturaByNode()
+}
+
+func (t *BinaryTree) SumaHojasIzquierdas() int {
+	if t.root == nil {
+		return 0
+	}
+	return t.root.SumaHojasIzquierdas(false)
+}
