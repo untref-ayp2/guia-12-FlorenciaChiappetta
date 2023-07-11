@@ -239,3 +239,19 @@ func mayorAltura(raiz *Nodo) int {
 		return alturaDerecha
 	}
 }
+func sumaValoresPares(raiz *Nodo) int {
+	// Si el árbol está vacío, devolver 0
+	if raiz == nil {
+		return 0
+	}
+	// Calcular la suma de los valores pares del subárbol izquierdo
+	sumaIzquierda := sumaValoresPares(raiz.izquierda)
+	// Calcular la suma de los valores pares del subárbol derecho
+	sumaDerecha := sumaValoresPares(raiz.derecha)
+	// Si el valor del nodo actual es par, sumarlo
+	if raiz.valor%2 == 0 {
+		return raiz.valor + sumaIzquierda + sumaDerecha
+	} else {
+		return sumaIzquierda + sumaDerecha
+	}
+}
